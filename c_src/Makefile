@@ -5,7 +5,7 @@ CC       = clang++
 default: deps json_nif
 
 deps:
-	git clone --depth 1 https://github.com/danielaparker/jsoncons.git
+	git clone --depth 1 https://github.com/danielaparker/jsoncons.git || echo 'already cloned jsoncons'
 
 json_nif:
 	$(CC) $(STD) $(INCLUDES) json_nif.cpp -fpic -shared -o json.so
